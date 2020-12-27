@@ -51,5 +51,5 @@ dependencies {
 runtime {
     imageZip.set(project.file("${project.buildDir}/image-zip/reactiveLib-image.zip"))
     options.set(listOf("--strip-debug", "--compress", "2", "--no-header-files", "--no-man-pages"))
-    modules.set(listOf("java.logging"))
+    modules.set(listOf("java.logging","java.naming", "java.xml"))
 }
