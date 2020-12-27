@@ -11,7 +11,6 @@ WORKDIR /reactiveApp/
 RUN chmod +x ./gradlew && ./gradlew clean build runtimezip
 
 FROM alpine:latest
-RUN apk --no-cache add ca-certificates
 WORKDIR /opt/jdk/
 COPY --from=builder /reactiveApp/build/image .
 RUN apk --update add --no-cache ca-certificates curl openssl binutils xz \
