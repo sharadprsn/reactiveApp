@@ -7,8 +7,8 @@ ca-certificates \
 && rm -rf /var/lib/apt/lists/*
 
 RUN git clone https://github.com/sharadprsn/reactiveApp.git
-RUN chmod +x ./gradlew
-RUN ./gradlew clean build runtimezip
+WORKDIR /reactiveApp/
+RUN chmod +x ./gradlew && ./gradlew clean build runtimezip
 
 FROM alpine:latest
 RUN apk --no-cache add ca-certificates
